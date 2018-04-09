@@ -1,0 +1,52 @@
+<html>
+<head>
+
+<!-- 引用jQuery <script src="http://code.jquery.com/jquery-latest.js"></script> -->
+
+
+<!-- 引用Vue <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+
+
+<!-- 引用jQuery -->
+<script src="/static/js/jquery.min.js"></script>
+
+<!-- 引用Vue -->
+<script src="/static/js/vue.js"></script>
+
+<script>
+// 初始化代码:
+$(function () {
+    var vm = new Vue({
+        el: '#vm',
+        data: {
+            name: 'Robot',
+            age: 15
+        }
+    });
+    window.vm = vm;
+
+    var eform = new Vue({
+        el: '#eform',
+        data: {
+            email: 'zzk@163.com',
+            name: 'zzk'
+        }
+    });
+    window.eform=eform;
+});
+</script>
+
+</head>
+
+<body>
+
+    <div id="vm">
+        <p>Hello, {{ name }}!</p>
+        <p>You are {{ age }} years old!</p>
+    </div>
+    <form id="eform" action="#">
+        <p><input v-model="email"></p>
+        <p><input v-model="name"></p>
+    </form>
+</body>
+<html>
